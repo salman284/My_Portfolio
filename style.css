@@ -9,7 +9,7 @@ html, body {
   min-height: 100%;
   background-color: #000000;
   overflow-x: hidden;
-  scroll-behavior: auto; /* Keep manual lerp in control for ultra-precise synchronization */
+  scroll-behavior: auto;
 }
 
 /* Scroll track provides the scroll distance */
@@ -29,6 +29,10 @@ html, body {
   display: block;
   z-index: 1;
   pointer-events: none;
+  /* Hardware-accelerated contrast and clarity boost */
+  filter: contrast(1.06) brightness(1.01) saturate(1.04);
+  transform: translateZ(0);
+  will-change: contents;
 }
 
 /* Sleek subtle scrollbar */

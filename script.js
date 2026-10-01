@@ -1,7 +1,7 @@
 (() => {
-  const FRAME_COUNT = 300;
+  const FRAME_COUNT = 240; // 240 high-quality frames extracted directly from the 24fps master video
   const FOLDER_PATH = './hero section';
-  const LERP_FACTOR = 0.09; // Damping factor for smooth scroll physics
+  const LERP_FACTOR = 0.085; // Silky inertia damping
 
   const canvas = document.getElementById('canvas');
   const ctx = canvas.getContext('2d', { alpha: false });
@@ -17,7 +17,7 @@
   // Build frame URL
   function getFrameUrl(index) {
     const frameNumber = String(index + 1).padStart(3, '0');
-    return `${FOLDER_PATH}/ezgif-frame-${frameNumber}.jpg`;
+    return `${FOLDER_PATH}/frame-${frameNumber}.jpg`;
   }
 
   // Preload all frames progressively
@@ -27,7 +27,7 @@
       img.src = getFrameUrl(i);
       img.onload = () => {
         isLoaded[i] = true;
-        // If nothing has rendered yet or this frame is currently active, render it
+        // Render immediately if it's the start or matches active scroll position
         if (lastDrawnFrame === -1 || Math.round(currentFrame) === i) {
           renderFrame(currentFrame, true);
         }
