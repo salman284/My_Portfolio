@@ -7,30 +7,32 @@
   --bg-card: rgba(18, 20, 24, 0.72);
   --bg-card-hover: rgba(26, 30, 37, 0.88);
   --bg-glass: rgba(14, 16, 20, 0.65);
-  
+
   --border-subtle: rgba(215, 226, 234, 0.08);
   --border-medium: rgba(215, 226, 234, 0.16);
   --border-strong: rgba(215, 226, 234, 0.28);
-  
+
   --text-primary: #D7E2EA;
   --text-secondary: #A0B0BC;
   --text-muted: #6E7D8A;
   --text-dim: #45505A;
-  
+
   --accent-cyan: #38BDF8;
   --accent-emerald: #10B981;
   --accent-amber: #F59E0B;
   --accent-indigo: #818CF8;
   --accent-purple: #A855F7;
-  
+
   --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-  
+
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -103,7 +105,11 @@ body {
 }
 
 /* Typography Scale */
-h1, h2, h3, h4, .font-display {
+h1,
+h2,
+h3,
+h4,
+.font-display {
   font-family: var(--font-display);
   letter-spacing: -0.025em;
   font-weight: 700;
@@ -139,6 +145,7 @@ h1, h2, h3, h4, .font-display {
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border-subtle);
   border-radius: 16px;
+  padding: 32px;
   transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
 }
 
@@ -224,20 +231,35 @@ h1, h2, h3, h4, .font-display {
   transform: translateY(-2px);
 }
 
-/* Badges */
+/* Badges & Tags */
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 14px;
+  padding: 5px 12px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+  background: rgba(215, 226, 234, 0.05);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.badge:hover {
+  border-color: var(--border-medium);
+  background: rgba(215, 226, 234, 0.1);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.badge-mono {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   border-radius: 9999px;
-  border: 1px solid var(--border-medium);
-  background: rgba(215, 226, 234, 0.04);
-  color: var(--text-secondary);
 }
 
 .badge-live {
@@ -256,8 +278,17 @@ h1, h2, h3, h4, .font-display {
 }
 
 @keyframes pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.85); }
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
 }
 
 /* Section Container */
@@ -303,7 +334,10 @@ h1, h2, h3, h4, .font-display {
 
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

@@ -8,6 +8,8 @@ interface FadeInProps {
   direction?: 'up' | 'down' | 'left' | 'right' | 'none';
   distance?: number;
   className?: string;
+  style?: React.CSSProperties;
+  id?: string;
   viewportMargin?: string;
 }
 
@@ -18,6 +20,8 @@ export const FadeIn: React.FC<FadeInProps> = ({
   direction = 'up',
   distance = 24,
   className = '',
+  style = {},
+  id,
   viewportMargin = '-60px'
 }) => {
   const shouldReduceMotion = useReducedMotion();
@@ -43,6 +47,7 @@ export const FadeIn: React.FC<FadeInProps> = ({
 
   return (
     <motion.div
+      id={id}
       initial={{ opacity: 0, ...initialOffset }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, margin: viewportMargin }}
@@ -52,7 +57,7 @@ export const FadeIn: React.FC<FadeInProps> = ({
         ease: [0.22, 1, 0.36, 1]
       }}
       className={className}
-      style={{ willChange: 'opacity, transform' }}
+      style={{ willChange: 'opacity, transform', ...style }}
     >
       {children}
     </motion.div>
