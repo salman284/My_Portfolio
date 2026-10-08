@@ -152,7 +152,6 @@ export const Marquee: React.FC = () => {
         }}
       >
         <div>
-          <div className="section-label">01 // TECHNICAL CAPABILITIES</div>
           <h3
             style={{
               fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',

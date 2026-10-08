@@ -9,7 +9,6 @@ export const Achievements: React.FC = () => {
     <section id="achievements" className="section-container" style={{ paddingTop: '40px', paddingBottom: '80px' }}>
       {/* Section Header */}
       <FadeIn>
-        <div className="section-label">06 // COMPETITIVE RECOGNITION</div>
         <h2 className="section-heading">Honors & Finalist Awards</h2>
         <p
           style={{

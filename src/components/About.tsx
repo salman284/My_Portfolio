@@ -19,7 +19,6 @@ export const About: React.FC = () => {
     <section id="about" className="section-container" style={{ minHeight: '100vh' }}>
       {/* Section Header */}
       <FadeIn>
-        <div className="section-label">02 // BACKGROUND & ACADEMICS</div>
         <h2 className="section-heading">About Me</h2>
       </FadeIn>
 

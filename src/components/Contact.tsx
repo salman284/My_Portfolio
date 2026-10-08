@@ -16,10 +16,6 @@ export const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="section-container" style={{ paddingBottom: '120px' }}>
-      <FadeIn>
-        <div className="section-label">07 // INITIATE CONVERSATION</div>
-      </FadeIn>
-
       <div
         className="glass-panel"
         style={{

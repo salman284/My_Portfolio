@@ -114,31 +114,29 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           </div>
 
           {/* Action Links */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
-            {project.githubUrl && (
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="btn-secondary"
-                style={{ padding: '10px 20px', fontSize: '0.85rem' }}
-                aria-label={`View ${project.title} on GitHub`}
-              >
-                <GithubIcon size={16} />
-                GitHub
-              </a>
-            )}
+          <div className="project-action-links">
             {project.liveDemoUrl && (
               <a
                 href={project.liveDemoUrl}
                 target="_blank"
-                rel="noreferrer"
-                className="btn-primary"
-                style={{ padding: '10px 20px', fontSize: '0.85rem' }}
+                rel="noopener noreferrer"
+                className="btn-primary project-btn"
                 aria-label={`Open Live Demo for ${project.title}`}
               >
                 <ExternalLink size={16} />
                 Live Demo
+              </a>
+            )}
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary project-btn"
+                aria-label={`View ${project.title} on GitHub`}
+              >
+                <GithubIcon size={16} />
+                GitHub
               </a>
             )}
           </div>
@@ -255,6 +253,34 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   </span>
                 ))}
               </div>
+            </div>
+
+            {/* Mobile Actions: Accessible at bottom of project details */}
+            <div className="project-action-links project-action-links-bottom">
+              {project.liveDemoUrl && (
+                <a
+                  href={project.liveDemoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary project-btn"
+                  aria-label={`Open Live Demo for ${project.title}`}
+                >
+                  <ExternalLink size={16} />
+                  Live Demo
+                </a>
+              )}
+              {project.githubUrl && (
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary project-btn"
+                  aria-label={`View ${project.title} on GitHub`}
+                >
+                  <GithubIcon size={16} />
+                  GitHub
+                </a>
+              )}
             </div>
           </div>
 

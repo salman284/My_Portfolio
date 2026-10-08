@@ -64,7 +64,8 @@ export const PROJECTS_DATA: ProjectItem[] = [
       '📰 Agricultural news and updates'
     ],
     achievement: 'Infosys Global Hackathon 2025 Finalist — Top 33 of 1,942 teams (top 1.6%)',
-    githubUrl: 'https://github.com/salman284',
+    githubUrl: 'https://github.com/salman284/AgriGuru.git',
+    liveDemoUrl: 'https://agri-guru-ten.vercel.app/',
     accentColor: '#10B981',
     previewType: 'agricultural'
   },
@@ -85,7 +86,8 @@ export const PROJECTS_DATA: ProjectItem[] = [
       '📊 Admin management dashboard with inventory control and revenue analytics',
       '📦 Live order status pipeline from preparation to delivery'
     ],
-    githubUrl: 'https://github.com/salman284',
+    githubUrl: 'https://github.com/salman284/OIBSIP_PizzaMaster.git',
+    liveDemoUrl: 'https://oibsip-pizza-master.vercel.app/',
     accentColor: '#F59E0B',
     previewType: 'food'
   },
@@ -105,7 +107,8 @@ export const PROJECTS_DATA: ProjectItem[] = [
       '🛡️ Offline fallback question bank ensuring zero downtime when disconnected',
       '📱 Mobile-first responsive UI with smooth question transitions'
     ],
-    githubUrl: 'https://github.com/salman284',
+    githubUrl: 'https://github.com/salman284/QuizMaster.git',
+    liveDemoUrl: 'https://quiz-master-liart.vercel.app/',
     accentColor: '#6366F1',
     previewType: 'quiz'
   }

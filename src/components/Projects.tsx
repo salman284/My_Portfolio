@@ -16,8 +16,7 @@ export const Projects: React.FC = () => {
     <section id="projects" className="section-container" style={{ position: 'relative' }}>
       {/* Section Header */}
       <FadeIn>
-        <div className="section-label">05 // FEATURED ENGINEERING</div>
-        <h2 className="section-heading">Selected Projects</h2>
+        <h2 className="section-heading">Projects</h2>
         <p
           style={{
             maxWidth: '680px',

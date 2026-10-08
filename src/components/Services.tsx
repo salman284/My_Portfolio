@@ -9,7 +9,6 @@ export const Services: React.FC = () => {
     <section id="services" className="section-container">
       {/* Section Header */}
       <FadeIn>
-        <div className="section-label">04 // WHAT I BUILD & CAN DO</div>
         <h2 className="section-heading">Technical Capabilities</h2>
         <p
           style={{
