@@ -2,21 +2,23 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, Calendar, MapPin, CheckCircle, ArrowRight } from 'lucide-react';
 import { FadeIn } from './animations/FadeIn';
+import { SectionHeading } from './animations/SectionHeading';
 import { EXPERIENCES_DATA } from '../data/portfolioData';
 
 export const Experience: React.FC = () => {
   return (
     <section id="experience" className="section-container">
       {/* Section Header */}
-      <FadeIn>
-        <h2 className="section-heading">Work Experience</h2>
+      <SectionHeading>Work Experience</SectionHeading>
+      <FadeIn delay={0.1}>
         <p
           style={{
             maxWidth: '680px',
+            margin: '0 auto 48px auto',
+            textAlign: 'center',
             color: 'var(--text-secondary)',
             fontSize: '1.05rem',
             lineHeight: 1.6,
-            marginBottom: '48px',
           }}
         >
           Practical software engineering experience across full-stack MERN development, API integrations, and Python-based data analytics.

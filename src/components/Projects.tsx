@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { useScroll } from 'framer-motion';
 import { FadeIn } from './animations/FadeIn';
+import { SectionHeading } from './animations/SectionHeading';
 import { ProjectCard } from './ProjectCard';
 import { PROJECTS_DATA } from '../data/portfolioData';
 
@@ -15,15 +16,16 @@ export const Projects: React.FC = () => {
   return (
     <section id="projects" className="section-container" style={{ position: 'relative' }}>
       {/* Section Header */}
-      <FadeIn>
-        <h2 className="section-heading">Projects</h2>
+      <SectionHeading>Projects</SectionHeading>
+      <FadeIn delay={0.1}>
         <p
           style={{
             maxWidth: '680px',
+            margin: '0 auto 64px auto',
+            textAlign: 'center',
             color: 'var(--text-secondary)',
             fontSize: '1.05rem',
             lineHeight: 1.6,
-            marginBottom: '64px',
           }}
         >
           End-to-end applications designed, built, and shipped against real acceptance criteria — featuring MERN architectures, Python modules, and hackathon-finalist platforms.

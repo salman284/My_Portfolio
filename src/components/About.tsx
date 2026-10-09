@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { GraduationCap, Award, CheckCircle2, MapPin, Terminal, BookOpen, Layers, Code2, Server, Cpu } from 'lucide-react';
 import { ScrollRevealParagraph } from './animations/ScrollReveal';
 import { FadeIn } from './animations/FadeIn';
+import { SectionHeading } from './animations/SectionHeading';
 import { PERSONAL_INFO, EDUCATION_DATA, CORE_SKILLS } from '../data/portfolioData';
 
 export const About: React.FC = () => {
@@ -18,12 +19,10 @@ export const About: React.FC = () => {
   return (
     <section id="about" className="section-container" style={{ minHeight: '100vh' }}>
       {/* Section Header */}
-      <FadeIn>
-        <h2 className="section-heading">About Me</h2>
-      </FadeIn>
+      <SectionHeading>About Me</SectionHeading>
 
       {/* Main Editorial Text with Word-by-Word Scroll Reveal */}
-      <div style={{ maxWidth: '980px', marginTop: '40px', marginBottom: '72px' }}>
+      <div style={{ maxWidth: '980px', margin: '40px auto 72px auto' }}>
         <div
           style={{
             fontSize: 'clamp(1.05rem, 1.8vw, 1.35rem)',

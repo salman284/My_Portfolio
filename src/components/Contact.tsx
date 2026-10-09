@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Mail, Copy, Check, ArrowUpRight, MapPin, Phone } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './icons/SocialIcons';
 import { FadeIn } from './animations/FadeIn';
+import { SectionHeading } from './animations/SectionHeading';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 export const Contact: React.FC = () => {
@@ -27,22 +28,10 @@ export const Contact: React.FC = () => {
           overflow: 'hidden',
         }}
       >
-        <div style={{ maxWidth: '820px' }}>
-          <FadeIn delay={0.1}>
-            <h2
-              style={{
-                fontSize: 'clamp(2.4rem, 6vw, 4.5rem)',
-                lineHeight: 1.08,
-                fontWeight: 800,
-                color: '#FFFFFF',
-                letterSpacing: '-0.03em',
-                marginBottom: '20px',
-              }}
-            >
-              Let's Build Something
-              <span style={{ color: 'var(--accent-cyan)' }}>.</span>
-            </h2>
-          </FadeIn>
+        <div style={{ maxWidth: '820px', margin: '0 auto', textAlign: 'center' }}>
+          <SectionHeading style={{ marginBottom: '20px' }}>
+            <>Let's Build Something<span style={{ color: 'var(--accent-cyan)' }}>.</span></>
+          </SectionHeading>
 
           <FadeIn delay={0.2}>
             <p
@@ -52,6 +41,8 @@ export const Contact: React.FC = () => {
                 lineHeight: 1.55,
                 marginBottom: '36px',
                 fontWeight: 400,
+                maxWidth: '680px',
+                margin: '0 auto 36px auto',
               }}
             >
               Whether you have a full-time software engineering role, internship opportunity, hackathon project, or technical problem to discuss — my inbox is always open.
@@ -65,6 +56,7 @@ export const Contact: React.FC = () => {
                 display: 'flex',
                 flexWrap: 'wrap',
                 alignItems: 'center',
+                justifyContent: 'center',
                 gap: '16px',
                 marginBottom: '40px',
               }}
@@ -121,6 +113,7 @@ export const Contact: React.FC = () => {
               style={{
                 display: 'flex',
                 flexWrap: 'wrap',
+                justifyContent: 'center',
                 gap: '24px',
                 borderTop: '1px solid rgba(215, 226, 234, 0.1)',
                 paddingTop: '28px',

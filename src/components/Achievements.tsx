@@ -2,21 +2,23 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Trophy, Award, Sparkles, Star } from 'lucide-react';
 import { FadeIn } from './animations/FadeIn';
+import { SectionHeading } from './animations/SectionHeading';
 import { ACHIEVEMENTS_DATA } from '../data/portfolioData';
 
 export const Achievements: React.FC = () => {
   return (
     <section id="achievements" className="section-container" style={{ paddingTop: '40px', paddingBottom: '80px' }}>
       {/* Section Header */}
-      <FadeIn>
-        <h2 className="section-heading">Honors & Finalist Awards</h2>
+      <SectionHeading>Honors & Finalist Awards</SectionHeading>
+      <FadeIn delay={0.1}>
         <p
           style={{
             maxWidth: '680px',
+            margin: '0 auto 40px auto',
+            textAlign: 'center',
             color: 'var(--text-secondary)',
             fontSize: '1.05rem',
             lineHeight: 1.6,
-            marginBottom: '40px',
           }}
         >
           Competitive hackathon milestones validating technical innovation, architecture, and real-world problem-solving under strict judging criteria.

@@ -23,7 +23,7 @@
   --accent-indigo: #818CF8;
   --accent-purple: #A855F7;
 
-  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Syne', 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
@@ -326,10 +326,71 @@ h4,
   border-radius: 50%;
 }
 
-.section-heading {
-  font-size: clamp(2.2rem, 5vw, 4rem);
+/* Viral Klickpin-Style Display Headings (Bold, Uppercase, Stroke-to-Solid Fill) */
+.section-heading,
+.klickpin-heading-text {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: clamp(1px, 0.18vw, 2.8px);
+  font-size: clamp(2.3rem, 5.5vw, 4.4rem);
   line-height: 1.1;
-  margin-bottom: 24px;
+  color: #FFFFFF;
+  margin: 0;
+  position: relative;
+  display: block;
+}
+
+.klickpin-heading-h3 {
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+  letter-spacing: clamp(0.5px, 0.12vw, 1.8px);
+}
+
+.klickpin-heading-container {
+  display: flex;
+  justifyContent: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.klickpin-heading-wrapper {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  cursor: default;
+}
+
+.klickpin-stroke-layer {
+  display: block;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(215, 226, 234, 0.55);
+  text-stroke: 1.5px rgba(215, 226, 234, 0.55);
+  transition: -webkit-text-stroke-color 0.35s ease, opacity 0.3s ease;
+  user-select: none;
+  will-change: opacity;
+}
+
+.klickpin-fill-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #FFFFFF;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.12);
+  text-shadow: 0 0 32px rgba(255, 255, 255, 0.22);
+  pointer-events: none;
+  will-change: opacity;
+  transition: text-shadow 0.35s ease;
+}
+
+.klickpin-heading-wrapper:hover .klickpin-stroke-layer {
+  -webkit-text-stroke-color: var(--accent-cyan);
+}
+
+.klickpin-heading-wrapper:hover .klickpin-fill-layer {
+  text-shadow: 0 0 45px rgba(56, 189, 248, 0.45);
 }
 
 /* Project Action Buttons & Responsive Layout */

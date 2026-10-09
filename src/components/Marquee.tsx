@@ -16,6 +16,7 @@ import {
   Workflow
 } from 'lucide-react';
 import { MARQUEE_ROW_1, MARQUEE_ROW_2 } from '../data/portfolioData';
+import { SectionHeading } from './animations/SectionHeading';
 
 interface MarqueeCardProps {
   label: string;
@@ -145,23 +146,14 @@ export const Marquee: React.FC = () => {
           margin: '0 auto 36px auto',
           padding: '0 24px',
           display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'flex-end',
-          flexWrap: 'wrap',
-          gap: '16px',
+          justifyContent: 'center',
+          alignItems: 'center',
+          textAlign: 'center',
         }}
       >
-        <div>
-          <h3
-            style={{
-              fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
-              fontWeight: 700,
-              color: '#D7E2EA',
-            }}
-          >
-            Core Stack & Tooling
-          </h3>
-        </div>
+        <SectionHeading as="h3" style={{ marginBottom: 0 }}>
+          Core Stack & Tooling
+        </SectionHeading>
       </div>
 
       {/* Row 1: Moves right on scroll */}

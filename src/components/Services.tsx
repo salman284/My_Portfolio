@@ -2,21 +2,23 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { FadeIn } from './animations/FadeIn';
+import { SectionHeading } from './animations/SectionHeading';
 import { SERVICES_DATA } from '../data/portfolioData';
 
 export const Services: React.FC = () => {
   return (
     <section id="services" className="section-container">
       {/* Section Header */}
-      <FadeIn>
-        <h2 className="section-heading">Technical Capabilities</h2>
+      <SectionHeading>Technical Capabilities</SectionHeading>
+      <FadeIn delay={0.1}>
         <p
           style={{
             maxWidth: '680px',
+            margin: '0 auto 48px auto',
+            textAlign: 'center',
             color: 'var(--text-secondary)',
             fontSize: '1.05rem',
             lineHeight: 1.6,
-            marginBottom: '48px',
           }}
         >
           Specialized full-stack development, API architecture, and applied AI systems crafted with performance and clean code standards.
