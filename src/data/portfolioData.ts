@@ -126,7 +126,8 @@ export const EXPERIENCES_DATA: ExperienceItem[] = [
       'Built and shipped PizzaMaster, a full-stack MERN food-ordering app, end to end in a 4-week engagement — data model, REST API, JWT auth, and deployed UI.',
       'Engineered role-based access for 2 user types (customer/admin) and an admin dashboard for inventory control and revenue analytics.'
     ],
-    technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'REST APIs']
+    technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'REST APIs'],
+    certificateUrl: '/certificates/oasis-infobyte-certificate.pdf'
   },
   {
     id: 'edunet-frontend',
@@ -139,7 +140,8 @@ export const EXPERIENCES_DATA: ExperienceItem[] = [
       'Delivered QuizMaster, a REST-API-driven quiz platform, as the capstone of a 6-week mentor-led program.',
       'Integrated a third-party trivia API spanning 20+ categories with client-side scoring, per-question timers, and offline fallback.'
     ],
-    technologies: ['HTML5', 'CSS3', 'JavaScript', 'REST API', 'Asynchronous JS']
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'REST API', 'Asynchronous JS'],
+    certificateUrl: '/certificates/aicte-frontend-certificate.pdf'
   },
   {
     id: 'aicte-shell-edunet',
@@ -152,7 +154,8 @@ export const EXPERIENCES_DATA: ExperienceItem[] = [
       'Developed a Python soil-health module mapping N-P-K and pH inputs to crop recommendations using pandas and Matplotlib.',
       'The module was later reused and productionized as KisanMitra’s core soil-advisory feature.'
     ],
-    technologies: ['Python', 'Pandas', 'Matplotlib', 'Data Analysis', 'Agritech Modeling']
+    technologies: ['Python', 'Pandas', 'Matplotlib', 'Data Analysis', 'Agritech Modeling'],
+    certificateUrl: '/certificates/aicte-aiml-certificate.pdf'
   }
 ];
 

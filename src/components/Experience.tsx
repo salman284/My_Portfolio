@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, Calendar, MapPin, CheckCircle, ArrowRight } from 'lucide-react';
+import { Briefcase, Calendar, MapPin, CheckCircle, ArrowRight, Award } from 'lucide-react';
 import { FadeIn } from './animations/FadeIn';
 import { SectionHeading } from './animations/SectionHeading';
 import { EXPERIENCES_DATA } from '../data/portfolioData';
@@ -124,24 +124,74 @@ export const Experience: React.FC = () => {
               ))}
             </div>
 
-            {/* Technologies Used */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', alignItems: 'center' }}>
-              <span
-                style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: '0.72rem',
-                  color: 'var(--text-dim)',
-                  textTransform: 'uppercase',
-                  marginRight: '6px',
-                }}
-              >
-                Tech Stack:
-              </span>
-              {exp.technologies.map((tech) => (
-                <span key={tech} className="badge" style={{ fontSize: '0.7rem' }}>
-                  {tech}
+            {/* Technologies Used + Certificate */}
+            <div
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '12px',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+              }}
+            >
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', alignItems: 'center' }}>
+                <span
+                  style={{
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.72rem',
+                    color: 'var(--text-dim)',
+                    textTransform: 'uppercase',
+                    marginRight: '6px',
+                  }}
+                >
+                  Tech Stack:
                 </span>
-              ))}
+                {exp.technologies.map((tech) => (
+                  <span key={tech} className="badge" style={{ fontSize: '0.7rem' }}>
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {exp.certificateUrl && (
+                <motion.a
+                  href={exp.certificateUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.97 }}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '7px',
+                    padding: '8px 18px',
+                    borderRadius: '9999px',
+                    background: 'linear-gradient(135deg, rgba(0,212,255,0.12), rgba(0,212,255,0.05))',
+                    border: '1px solid rgba(0,212,255,0.3)',
+                    color: 'var(--accent-cyan)',
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.75rem',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    letterSpacing: '0.04em',
+                    textTransform: 'uppercase',
+                    cursor: 'pointer',
+                    transition: 'border-color 0.2s, box-shadow 0.2s',
+                    boxShadow: '0 0 0 0 rgba(0,212,255,0)',
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 0 14px rgba(0,212,255,0.25)';
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(0,212,255,0.6)';
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 0 0 0 rgba(0,212,255,0)';
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(0,212,255,0.3)';
+                  }}
+                >
+                  <Award size={14} />
+                  View Certificate
+                </motion.a>
+              )}
             </div>
           </FadeIn>
         ))}

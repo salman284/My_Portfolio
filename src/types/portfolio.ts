@@ -23,6 +23,7 @@ export interface ExperienceItem {
   location: string;
   highlights: string[];
   technologies: string[];
+  certificateUrl?: string;
 }
 
 export interface ServiceItem {
