@@ -42,20 +42,23 @@ export const Services: React.FC = () => {
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: '80px 1fr 2fr auto',
-                alignItems: 'baseline',
+                gridTemplateColumns: '120px 1fr 2fr auto',
+                alignItems: 'center',
                 gap: '24px',
               }}
               className="service-grid"
             >
-              {/* Number */}
+              {/* Large display number */}
               <div
                 style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: '1.5rem',
-                  fontWeight: 600,
-                  color: 'var(--accent-cyan)',
-                  opacity: 0.8,
+                  fontFamily: 'var(--font-sans, sans-serif)',
+                  fontSize: 'clamp(4.5rem, 7vw, 7rem)',
+                  fontWeight: 900,
+                  color: '#D7E2EA',
+                  opacity: 0.9,
+                  lineHeight: 1,
+                  letterSpacing: '-0.04em',
+                  userSelect: 'none',
                 }}
               >
                 {service.number}
