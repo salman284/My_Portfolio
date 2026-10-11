@@ -40,6 +40,7 @@ export interface AchievementItem {
   stats: string;
   year: string;
   description: string;
+  certificateUrl?: string;
 }
 
 export interface EducationItem {

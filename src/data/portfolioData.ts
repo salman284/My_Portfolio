@@ -205,7 +205,8 @@ export const ACHIEVEMENTS_DATA: AchievementItem[] = [
     stats: 'Top 33 of 1,942 teams (Top 1.6%)',
     year: '2025',
     description:
-      'Selected among the top 33 global teams out of 1,942 competing teams for engineering KisanMitra, an intelligent agricultural platform addressing real challenges in crop health and market accessibility.'
+      'Selected among the top 33 global teams out of 1,942 competing teams for engineering KisanMitra, an intelligent agricultural platform addressing real challenges in crop health and market accessibility.',
+    certificateUrl: '/certificates/infosys-hackathon-2025-certificate.pdf'
   },
   {
     number: '02',
@@ -214,7 +215,8 @@ export const ACHIEVEMENTS_DATA: AchievementItem[] = [
     stats: 'Hackathon Finalist',
     year: '2025',
     description:
-      'Recognized as a finalist at University of Delhi for engineering AI-assisted solutions utilizing Gemini models and cutting-edge web development.'
+      'Recognized as a finalist at University of Delhi for engineering AI-assisted solutions utilizing Gemini models and cutting-edge web development.',
+    certificateUrl: '/certificates/build-with-gemini-certificate.png'
   }
 ];
 

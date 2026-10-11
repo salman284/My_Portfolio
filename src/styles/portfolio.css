@@ -348,7 +348,7 @@ h4,
 
 .klickpin-heading-container {
   display: flex;
-  justifyContent: center;
+  justify-content: center;
   align-items: center;
   width: 100%;
   text-align: center;
@@ -365,7 +365,7 @@ h4,
   display: block;
   color: transparent;
   -webkit-text-stroke: 1.5px rgba(215, 226, 234, 0.55);
-  text-stroke: 1.5px rgba(215, 226, 234, 0.55);
+  -moz-text-stroke: 1.5px rgba(215, 226, 234, 0.55);
   transition: -webkit-text-stroke-color 0.35s ease, opacity 0.3s ease;
   user-select: none;
   will-change: opacity;

@@ -1,6 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Trophy, Award, Sparkles, Star } from 'lucide-react';
+import { Trophy, Award, ExternalLink } from 'lucide-react';
 import { FadeIn } from './animations/FadeIn';
 import { SectionHeading } from './animations/SectionHeading';
 import { ACHIEVEMENTS_DATA } from '../data/portfolioData';
@@ -8,8 +7,7 @@ import { ACHIEVEMENTS_DATA } from '../data/portfolioData';
 export const Achievements: React.FC = () => {
   return (
     <section id="achievements" className="section-container" style={{ paddingTop: '40px', paddingBottom: '80px' }}>
-      {/* Section Header */}
-      <SectionHeading>Honors & Finalist Awards</SectionHeading>
+      <SectionHeading>Honors &amp; Finalist Awards</SectionHeading>
       <FadeIn delay={0.1}>
         <p
           style={{
@@ -25,7 +23,6 @@ export const Achievements: React.FC = () => {
         </p>
       </FadeIn>
 
-      {/* Achievements Grid */}
       <div
         style={{
           display: 'grid',
@@ -34,7 +31,12 @@ export const Achievements: React.FC = () => {
         }}
       >
         {ACHIEVEMENTS_DATA.map((item, index) => (
-          <FadeIn key={item.number} delay={index * 0.12} className="glass-panel" style={{ padding: '36px' }}>
+          <FadeIn
+            key={item.number}
+            delay={index * 0.12}
+            className="glass-panel"
+            style={{ padding: '36px', display: 'flex', flexDirection: 'column' }}
+          >
             <div
               style={{
                 display: 'flex',
@@ -115,10 +117,51 @@ export const Achievements: React.FC = () => {
                 color: 'var(--text-muted)',
                 fontSize: '0.92rem',
                 lineHeight: 1.6,
+                flex: 1,
+                marginBottom: item.certificateUrl ? '20px' : '0',
               }}
             >
               {item.description}
             </p>
+
+            {item.certificateUrl && (
+              <a
+                href={item.certificateUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '7px',
+                  padding: '9px 18px',
+                  borderRadius: '8px',
+                  fontSize: '0.82rem',
+                  fontFamily: 'var(--font-mono)',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                  border: index === 0
+                    ? '1px solid rgba(245, 158, 11, 0.35)'
+                    : '1px solid rgba(56, 189, 248, 0.35)',
+                  color: index === 0 ? 'var(--accent-amber)' : 'var(--accent-cyan)',
+                  background: index === 0
+                    ? 'rgba(245, 158, 11, 0.07)'
+                    : 'rgba(56, 189, 248, 0.07)',
+                  transition: 'background 0.2s ease, border-color 0.2s ease',
+                  alignSelf: 'flex-start',
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.background =
+                    index === 0 ? 'rgba(245, 158, 11, 0.15)' : 'rgba(56, 189, 248, 0.15)';
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.background =
+                    index === 0 ? 'rgba(245, 158, 11, 0.07)' : 'rgba(56, 189, 248, 0.07)';
+                }}
+              >
+                <ExternalLink size={14} />
+                View Certificate
+              </a>
+            )}
           </FadeIn>
         ))}
       </div>
