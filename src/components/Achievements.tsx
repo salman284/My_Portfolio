@@ -24,9 +24,10 @@ export const Achievements: React.FC = () => {
       </FadeIn>
 
       <div
+        className="achievements-grid"
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
           gap: '24px',
         }}
       >
@@ -35,7 +36,7 @@ export const Achievements: React.FC = () => {
             key={item.number}
             delay={index * 0.12}
             className="glass-panel"
-            style={{ padding: '36px', display: 'flex', flexDirection: 'column' }}
+            style={{ display: 'flex', flexDirection: 'column' }}
           >
             <div
               style={{

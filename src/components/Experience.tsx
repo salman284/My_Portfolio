@@ -28,7 +28,7 @@ export const Experience: React.FC = () => {
       {/* Experience List / Timeline */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
         {EXPERIENCES_DATA.map((exp, index) => (
-          <FadeIn key={exp.id} delay={index * 0.12} className="glass-panel" style={{ padding: '36px' }}>
+          <FadeIn key={exp.id} delay={index * 0.12} className="glass-panel">
             <div
               style={{
                 display: 'flex',

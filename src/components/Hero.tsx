@@ -32,14 +32,16 @@ export const Hero: React.FC = () => {
   return (
     <section
       id="hero"
+      className="hero-section"
       style={{
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         position: 'relative',
-        padding: '120px 24px 60px 24px',
+        padding: 'clamp(90px, 12vw, 120px) clamp(16px, 4vw, 24px) 60px clamp(16px, 4vw, 24px)',
         overflow: 'hidden',
+        boxSizing: 'border-box',
       }}
     >
       <div
@@ -190,7 +192,7 @@ export const Hero: React.FC = () => {
             variants={itemVariants}
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))',
               gap: '16px',
               marginTop: '28px',
               maxWidth: '960px',

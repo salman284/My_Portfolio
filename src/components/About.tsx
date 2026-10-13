@@ -40,9 +40,10 @@ export const About: React.FC = () => {
 
       {/* Structured Details: Education & Core Competencies */}
       <div
+        className="about-cards-grid"
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))',
           gap: '32px',
           marginTop: '48px',
           alignItems: 'stretch',
@@ -53,7 +54,6 @@ export const About: React.FC = () => {
           delay={0.1}
           className="glass-panel"
           style={{
-            padding: '36px 32px',
             display: 'flex',
             flexDirection: 'column',
           }}
@@ -260,7 +260,6 @@ export const About: React.FC = () => {
           delay={0.2}
           className="glass-panel"
           style={{
-            padding: '36px 32px',
             display: 'flex',
             flexDirection: 'column',
           }}

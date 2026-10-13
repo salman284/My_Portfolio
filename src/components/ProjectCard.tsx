@@ -22,8 +22,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   progress,
 }) => {
   const shouldReduceMotion = useReducedMotion();
+  const [isMobile, setIsMobile] = React.useState(false);
 
-  // Scale down slightly as user scrolls past
+  React.useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 860);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Scale down slightly as user scrolls past (disabled on mobile to keep cards readable)
   const scale = useTransform(progress, range, [1, targetScale]);
   // Subtle dimming as it gets layered
   const opacity = useTransform(progress, range, [1, 0.7]);
@@ -31,20 +39,21 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <div
       style={{
-        position: 'sticky',
-        top: `calc(100px + ${index * 32}px)`,
+        position: isMobile ? 'relative' : 'sticky',
+        top: isMobile ? 'auto' : `calc(100px + ${index * 32}px)`,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        marginBottom: `${(total - index - 1) * 36}px`,
+        marginBottom: isMobile ? '28px' : `${(total - index - 1) * 36}px`,
         width: '100%',
+        maxWidth: '100%',
       }}
       className="project-sticky-wrapper"
     >
       <motion.div
         style={{
-          scale: shouldReduceMotion ? 1 : scale,
-          opacity: shouldReduceMotion ? 1 : opacity,
+          scale: (shouldReduceMotion || isMobile) ? 1 : scale,
+          opacity: (shouldReduceMotion || isMobile) ? 1 : opacity,
           width: '100%',
           maxWidth: '1280px',
           background: 'rgba(16, 18, 22, 0.94)',
@@ -52,7 +61,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           WebkitBackdropFilter: 'blur(20px)',
           border: '1px solid rgba(215, 226, 234, 0.12)',
           borderRadius: '24px',
-          padding: 'clamp(24px, 4vw, 44px)',
+          padding: 'clamp(20px, 3.5vw, 44px)',
           boxShadow: '0 24px 60px rgba(0, 0, 0, 0.65)',
           transformOrigin: 'top center',
           willChange: 'transform, opacity',
@@ -114,7 +123,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           </div>
 
           {/* Action Links */}
-          <div className="project-action-links">
+          <div className="project-action-links project-action-links-top">
             {project.liveDemoUrl && (
               <a
                 href={project.liveDemoUrl}
@@ -146,7 +155,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
             gap: '32px',
             alignItems: 'center',
           }}
@@ -332,6 +341,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                     gridTemplateColumns: 'repeat(2, 1fr)',
                     gap: '12px',
                   }}
+                  className="project-mockup-grid-2"
                 >
                   <div
                     style={{
@@ -427,6 +437,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                     gridTemplateColumns: 'repeat(3, 1fr)',
                     gap: '10px',
                   }}
+                  className="project-mockup-grid-3"
                 >
                   <div style={{ background: 'rgba(215, 226, 234, 0.03)', padding: '10px', borderRadius: '8px' }}>
                     <div style={{ fontSize: '0.68rem', color: 'var(--text-dim)' }}>JWT AUTH</div>

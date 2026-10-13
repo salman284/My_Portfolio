@@ -35,10 +35,13 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
       className={`klickpin-heading-container ${className}`}
       style={{
         width: '100%',
+        maxWidth: '100%',
         display: 'flex',
         justifyContent: 'center',
         textAlign: 'center',
         marginBottom: as === 'h3' ? '0' : '24px',
+        boxSizing: 'border-box',
+        padding: '0 4px',
         ...style,
       }}
     >
